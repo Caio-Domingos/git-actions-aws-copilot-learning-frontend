@@ -15,4 +15,8 @@ export const routes: Routes = [
     path: 'pagetwo',
     component: PagetwoComponent,
   },
+  {
+    path: '**',
+    component: PagetwoComponent,
+  },
 ];
