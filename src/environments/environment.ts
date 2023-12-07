@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  api: 'http://localhost:3000',
+  api: 'https://develop-api.ga-awscop.thinkless.com.br',
 };
