@@ -11,6 +11,6 @@ import { UtilsService } from '../services/utils.service';
 })
 export class PageoneComponent {
   constructor(private utilsService: UtilsService) {
-    console.log(this.utilsService.getEnv('api'));
+    console.log(this.utilsService.getEnvs());
   }
 }
