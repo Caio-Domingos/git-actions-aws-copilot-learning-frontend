@@ -9,6 +9,6 @@ import { environment } from '../../environments/environment';
 export class ItemsService {
   constructor(public http: HttpClient, private utilsService: UtilsService) {}
   getItems() {
-    return this.http.get(this.utilsService.getEnv('api') + '/items');
+    return this.http.get(this.utilsService.getEnv('API_URL') + '/items');
   }
 }

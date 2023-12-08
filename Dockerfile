@@ -17,6 +17,8 @@ COPY . .
 # Construir a aplicação para produção
 RUN npm run build -- --output-path=./dist/out
 
+RUN echo '{ "API_URL": "https://develop-api.ga-awscop.thinkless.com.br" }' > ./dist/out/browser/env.json
+
 # Etapa 2: Servir a aplicação Angular
 # Usar o servidor web nginx para servir a aplicação
 FROM nginx:alpine
