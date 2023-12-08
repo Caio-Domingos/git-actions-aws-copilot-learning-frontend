@@ -36,19 +36,19 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '18'
+          node-version: "18"
 
       - name: Install Dependencies
         run: npm install
 
+      - name: Create env.json before
+        run: |
+          echo '{ "API_URL": "${{ secrets.API_URL }}" }' > ./
       - name: Build the Project
         run: npm run build:deploy
-
-      - name: Create env.json
+      - name: Create env.json after
         run: |
           echo '{ "API_URL": "${{ secrets.API_URL }}" }' > ./dist/out/browser/env.json
-
-
 
       - name: Configurando credenciais da AWS
         uses: aws-actions/configure-aws-credentials@v4
