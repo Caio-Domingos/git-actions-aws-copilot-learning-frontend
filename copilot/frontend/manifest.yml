@@ -1,27 +1,13 @@
 name: frontend
-type: Load Balanced Web Service
+type: Static Site
+files:
+  - source: dist/out/browser
+    recursive: true
 
 http:
-  alias: ga-awscop.thinkless.com.br
-  path: "/"
-
-image:
-  build: Dockerfile
-
-  port: 80
-
-cpu: 256
-memory: 512
-count: 1
-exec: true
-network:
-  connect: true
-
-secrets:
-  API_URL:
-    secretsmanager: '${COPILOT_APPLICATION_NAME}/${COPILOT_ENVIRONMENT_NAME}/test:API_URL::'
+  alias: 'ga-awscop.thinkless.com.br'
 
 environments:
   develop:
     http:
-      alias: develop.ga-awscop.thinkless.com.br
+      alias: 'develop.ga-awscop.thinkless.com.br'
